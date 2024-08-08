@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./trans.css">  
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.11.4/dist/gsap.min.js"></script>
+    <link rel="shortcut icon" href="./Assets/Images/Logos/logo.svg" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../Assets/Images/Logos/logo.svg" alt="">
+            <h3>Comag</h3>
+        </div>
+        <input type="checkbox" id="burger-menu" class="burger-menu">
+        <label for="burger-menu" class="burger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="#autre-service">Autre Services</a></li>
+                <li><a href="#agrements">Demande d'Agrément</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container" id="mainContainer">
+        <h1>Demande d'Agrément de Transport</h1>
+        <form id="agrementForm">
+            <div class="form-section" id="section1">
+                <h2>1. Informations sur l'entreprise</h2>
+                <div class="form-group">
+                    <label for="nomEntreprise" class="required">Nom de l'entreprise</label>
+                    <input type="text" id="nomEntreprise" name="nomEntreprise" required>
+                </div>
+                <div class="form-group">
+                    <label for="siret">Numéro SIRET (facultatif)</label>
+                    <input type="text" id="siret" name="siret">
+                </div>
+                <div class="form-group">
+                    <label for="adresse">Adresse du siège social (facultatif)</label>
+                    <input type="text" id="adresse" name="adresse">
+                </div>
+            </div>
+    
+            <div class="form-section" id="section2">
+                <h2>2. Type d'agrément demandé</h2>
+                <div class="form-group">
+                    <label for="typeTransport" class="required">Type de transport</label>
+                    <select id="typeTransport" name="typeTransport" required>
+                        <option value="">Sélectionnez un type</option>
+                        <option value="routier">Transport routier</option>
+                        <option value="ferroviaire">Transport ferroviaire</option>
+                        <option value="maritime">Transport maritime</option>
+                        <option value="aerien">Transport aérien</option>
+                        <option value="fluvial">Transport fluvial</option>
+                        <option value="multimodal">Transport multimodal</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="categorie" class="required">Catégorie de transport</label>
+                    <select id="categorie" name="categorie" required>
+                        <option value="">Sélectionnez une catégorie</option>
+                        <option value="marchandises">Transport de marchandises</option>
+                        <option value="passagers">Transport de passagers</option>
+                        <option value="dangereux">Transport de matières dangereuses</option>
+                        <option value="exceptionnel">Transport exceptionnel</option>
+                        <option value="frigorifique">Transport frigorifique</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+            </div>
+    
+            <div class="form-section" id="section3">
+                <h2>3. Responsable légal</h2>
+                <div class="form-group">
+                    <label for="nomResponsable" class="required">Nom et prénom</label>
+                    <input type="text" id="nomResponsable" name="nomResponsable" required>
+                </div>
+                <div class="form-group">
+                    <label for="emailResponsable" class="required">Email</label>
+                    <input type="email" id="emailResponsable" name="emailResponsable" required>
+                </div>
+                <div class="form-group">
+                    <label for="telResponsable" class="required">Téléphone</label>
+                    <input type="tel" id="telResponsable" name="telResponsable" required>
+                </div>
+            </div>
+    
+            <div class="form-section" id="section4">
+                <h2>4. Informations sur la flotte</h2>
+                <div class="form-group">
+                    <label for="nbVehicules" class="required">Nombre de véhicules/unités de transport</label>
+                    <input type="number" id="nbVehicules" name="nbVehicules" required min="1">
+                </div>
+                <div class="form-group">
+                    <label for="typeVehicules" class="required">Types de véhicules/unités</label>
+                    <textarea id="typeVehicules" name="typeVehicules" rows="3" required placeholder="Ex: 5 camions semi-remorques, 3 fourgonnettes, 2 véhicules frigorifiques"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="zoneOperation" class="required">Zone d'opération principale</label>
+                    <select id="zoneOperation" name="zoneOperation" required>
+                        <option value="">Sélectionnez une zone</option>
+                        <option value="regionale">Régionale</option>
+                        <option value="nationale">Nationale</option>
+                        <option value="internationale">Internationale</option>
+                    </select>
+                </div>
+            </div>
+    
+            <div class="form-section" id="section5">
+                <h2>5. Certifications et assurances</h2>
+                <div class="form-group">
+                    <label for="certifications">Certifications détenues (cochez toutes les options applicables)</label>
+                    <div>
+                        <input type="checkbox" id="iso9001" name="certifications" value="ISO9001">
+                        <label for="iso9001">ISO 9001</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="iso14001" name="certifications" value="ISO14001">
+                        <label for="iso14001">ISO 14001</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="ohsas18001" name="certifications" value="OHSAS18001">
+                        <label for="ohsas18001">OHSAS 18001</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="autre" name="certifications" value="autre">
+                        <label for="autre">Autre</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="assurance" class="required">Numéro de police d'assurance responsabilité civile</label>
+                    <input type="text" id="assurance" name="assurance" required>
+                </div>
+            </div>
+    
+            <div class="form-section" id="section6">
+                <h2>6. Informations complémentaires</h2>
+                <div class="form-group">
+                    <label for="experienceTransport" class="required">Années d'expérience dans le transport</label>
+                    <input type="number" id="experienceTransport" name="experienceTransport" required min="0">
+                </div>
+                <div class="form-group">
+                    <label for="commentaires">Informations supplémentaires ou spécificités de votre activité de transport</label>
+                    <textarea id="commentaires" name="commentaires" rows="4"></textarea>
+                </div>
+            </div>
+    
+            <button type="submit" id="submitBtn">Soumettre la demande</button>
+        </form>
+    </div>
+    <footer>
+        <div class="logo">
+            <img src="../Assets/Images/Logos/logo.svg" alt="logo">
+            <h3>Comag</h3>
+        </div>
+        <div>
+           <div class="texte">
+            <p>Mention légales</p>
+            <p>Politique de confidentialité</p>
+           </div>
+           <div>
+            <img src="../asset/facebook-circle-fill.svg" alt="Facebook" class="img">
+            <img src="../asset/instagram-fill.svg" alt="Instagram" class="img">
+            <img src="../asset/linkedin-fill.svg" alt="linkedin" class="img">
+           </div>
+          </div>
+     </footer>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        gsap.to('#mainContainer', {duration: 0.8, opacity: 1, y: 0, ease: 'power3.out'});
+        gsap.to('.form-section', {duration: 0.6, opacity: 1, x: 0, stagger: 0.2, ease: 'power2.out', delay: 0.4});
+        gsap.to('#submitBtn', {duration: 0.6, opacity: 1, y: 0, ease: 'back.out(1.7)', delay: 1.6});
+    
+        const formGroups = document.querySelectorAll('.form-group');
+        formGroups.forEach(group => {
+            const inputs = group.querySelectorAll('input, select, textarea');
+            const label = group.querySelector('label');
+    
+            inputs.forEach(input => {
+                input.addEventListener('focus', () => {
+                    label.style.color = '#3498db';
+                });
+    
+                input.addEventListener('blur', () => {
+                    label.style.color = '#34495e';
+                });
+            });
+        });
+    
+        document.getElementById('agrementForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Simuler l'envoi des données à un serveur
+            console.log('Données de la demande d\'agrément de transport:', data);
+            
+            // Afficher un message de confirmation
+            showNotification('Votre demande d\'agrément de transport a été soumise avec succès! Un agent traitera votre dossier dans les plus brefs délais.', 'success');
+            
+            // Réinitialiser le formulaire
+            this.reset();
+        });
+    
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.textContent = message;
+            notification.style.position = 'fixed';
+            notification.style.top = '20px';
+            notification.style.right = '20px';
+            notification.style.padding = '15px 20px';
+            notification.style.borderRadius = '5px';
+            notification.style.color = '#fff';
+            notification.style.fontWeight = 'bold';
+            notification.style.zIndex = '1000';
+            notification.style.opacity = '0';
+            notification.style.transform = 'translateY(-20px)';
+            notification.style.transition = 'all 0.3s ease';
+    
+            if (type === 'success') {
+                notification.style.backgroundColor = '#2ecc71';
+            } else if (type === 'error') {
+                notification.style.backgroundColor = '#e74c3c';
+            }
+    
+            document.body.appendChild(notification);
+    
+            setTimeout(() => {
+                notification.style.opacity = '1';
+                notification.style.transform = 'translateY(0)';
+            }, 100);
+    
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                notification.style.transform = 'translateY(-20px)';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 5000);
+        }
+    });
+    </script>
+</body>
+</html>

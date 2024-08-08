@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>commerce</title>
+    <link rel="stylesheet" href="./com.css">  
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.11.4/dist/gsap.min.js"></script>
+    <link rel="shortcut icon" href="./Assets/Images/Logos/logo.svg" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../Assets/Images/Logos/logo.svg" alt="">
+            <h3>Comag</h3>
+        </div>
+        <input type="checkbox" id="burger-menu" class="burger-menu">
+        <label for="burger-menu" class="burger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="#autre-service">Autre Services</a></li>
+                <li><a href="#agrements">Demande d'Agrément</a></li>
+                <!-- <li><a href="contact.html">Contact</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <div class="container" id="mainContainer">
+        <h1>Demande d'Agrément de Commerce</h1>
+        <form id="agrementForm">
+            <div class="form-section" id="section1">
+                <h2>1. Informations sur l'entreprise</h2>
+                <div class="form-group">
+                    <label for="nomEntreprise" class="required">Nom de l'entreprise</label>
+                    <input type="text" id="nomEntreprise" name="nomEntreprise" required>
+                </div>
+                <div class="form-group">
+                    <label for="siret">Numéro SIRET (facultatif)</label>
+                    <input type="text" id="siret" name="siret">
+                </div>
+                <div class="form-group">
+                    <label for="adresse">Adresse du siège social (facultatif)</label>
+                    <input type="text" id="adresse" name="adresse">
+                </div>
+            </div>
+    
+            <div class="form-section" id="section2">
+                <h2>2. Type d'agrément demandé</h2>
+                <div class="form-group">
+                    <label for="typeCommerce" class="required">Type de commerce</label>
+                    <select id="typeCommerce" name="typeCommerce" required>
+                        <option value="">Sélectionnez un type</option>
+                        <option value="detail">Commerce de détail</option>
+                        <option value="gros">Commerce de gros</option>
+                        <option value="ecommerce">E-commerce</option>
+                        <option value="franchise">Franchise</option>
+                        <option value="import_export">Import/Export</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="secteurActivite" class="required">Secteur d'activité</label>
+                    <select id="secteurActivite" name="secteurActivite" required>
+                        <option value="">Sélectionnez un secteur</option>
+                        <option value="alimentaire">Alimentaire</option>
+                        <option value="textile">Textile et habillement</option>
+                        <option value="electronique">Électronique et high-tech</option>
+                        <option value="meuble">Ameublement et décoration</option>
+                        <option value="sante">Santé et bien-être</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+            </div>
+    
+            <div class="form-section" id="section3">
+                <h2>3. Responsable légal</h2>
+                <div class="form-group">
+                    <label for="nomResponsable" class="required">Nom et prénom</label>
+                    <input type="text" id="nomResponsable" name="nomResponsable" required>
+                </div>
+                <div class="form-group">
+                    <label for="emailResponsable" class="required">Email</label>
+                    <input type="email" id="emailResponsable" name="emailResponsable" required>
+                </div>
+                <div class="form-group">
+                    <label for="telResponsable" class="required">Téléphone</label>
+                    <input type="tel" id="telResponsable" name="telResponsable" required>
+                </div>
+            </div>
+    
+            <div class="form-section" id="section4">
+                <h2>4. Informations complémentaires</h2>
+                <div class="form-group">
+                    <label for="nbEmployes" class="required">Nombre d'employés</label>
+                    <input type="number" id="nbEmployes" name="nbEmployes" required min="1">
+                </div>
+                <div class="form-group">
+                    <label for="chiffreAffaires" class="required">Chiffre d'affaires annuel estimé (en fcfa)</label>
+                    <input type="number" id="chiffreAffaires" name="chiffreAffaires" required min="0">
+                </div>
+                <div class="form-group">
+                    <label for="methodesVente">Méthodes de vente (cochez toutes les options applicables)</label>
+                    <div>
+                        <input type="checkbox" id="ventePhysique" name="methodesVente" value="physique">
+                        <label for="ventePhysique">Vente en magasin physique</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="venteEnLigne" name="methodesVente" value="enLigne">
+                        <label for="venteEnLigne">Vente en ligne</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="venteDistance" name="methodesVente" value="distance">
+                        <label for="venteDistance">Vente à distance (téléphone, catalogue)</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="commentaires">Informations supplémentaires ou spécificités de votre commerce</label>
+                    <textarea id="commentaires" name="commentaires" rows="4"></textarea>
+                </div>
+            </div>
+    
+            <button type="submit" id="submitBtn">Soumettre la demande</button>
+        </form>
+    </div>
+    <footer>
+        <div class="logo">
+            <img src="../Assets/Images/Logos/logo.svg" alt="logo">
+            <h3>Comag</h3>
+        </div>
+        <div>
+           <div class="texte">
+            <p>Mention légales</p>
+            <p>Politique de confidentialité</p>
+           </div>
+           <div>
+            <img src="../asset/facebook-circle-fill.svg" alt="Facebook" class="img">
+            <img src="../asset/instagram-fill.svg" alt="Instagram" class="img">
+            <img src="../asset/linkedin-fill.svg" alt="linkedin" class="img">
+           </div>
+          </div>
+     </footer>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        gsap.to('#mainContainer', {duration: 0.8, opacity: 1, y: 0, ease: 'power3.out'});
+        gsap.to('.form-section', {duration: 0.6, opacity: 1, x: 0, stagger: 0.2, ease: 'power2.out', delay: 0.4});
+        gsap.to('#submitBtn', {duration: 0.6, opacity: 1, y: 0, ease: 'back.out(1.7)', delay: 1.6});
+    
+        const formGroups = document.querySelectorAll('.form-group');
+        formGroups.forEach(group => {
+            const inputs = group.querySelectorAll('input, select, textarea');
+            const label = group.querySelector('label');
+    
+            inputs.forEach(input => {
+                input.addEventListener('focus', () => {
+                    label.style.color = '#3498db';
+                });
+    
+                input.addEventListener('blur', () => {
+                    label.style.color = '#34495e';
+                });
+            });
+        });
+    
+        document.getElementById('agrementForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Simuler l'envoi des données à un serveur
+            console.log('Données de la demande d\'agrément de commerce:', data);
+            
+            // Afficher un message de confirmation
+            showNotification('Votre demande d\'agrément de commerce a été soumise avec succès! Un agent traitera votre dossier dans les plus brefs délais.', 'success');
+            
+            // Réinitialiser le formulaire
+            this.reset();
+        });
+    
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.textContent = message;
+            notification.style.position = 'fixed';
+            notification.style.top = '20px';
+            notification.style.right = '20px';
+            notification.style.padding = '15px 20px';
+            notification.style.borderRadius = '5px';
+            notification.style.color = '#fff';
+            notification.style.fontWeight = 'bold';
+            notification.style.zIndex = '1000';
+            notification.style.opacity = '0';
+            notification.style.transform = 'translateY(-20px)';
+            notification.style.transition = 'all 0.3s ease';
+    
+            if (type === 'success') {
+                notification.style.backgroundColor = '#2ecc71';
+            } else if (type === 'error') {
+                notification.style.backgroundColor = '#e74c3c';
+            }
+    
+            document.body.appendChild(notification);
+    
+            setTimeout(() => {
+                notification.style.opacity = '1';
+                notification.style.transform = 'translateY(0)';
+            }, 100);
+    
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                notification.style.transform = 'translateY(-20px)';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 5000);
+        }
+    });
+    </script>
+</body>
+</html>
