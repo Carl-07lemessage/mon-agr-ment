@@ -455,7 +455,11 @@ button{
     }
 }@media screen and (max-width: 768px) {
     .burger-icon {
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 5px;
     }
 
     .nav-links {
